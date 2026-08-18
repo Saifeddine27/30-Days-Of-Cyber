@@ -16,8 +16,8 @@ By Day 30: a real portfolio of tools I built myself.
 
 | Day | Project | Status |
 |-----|---------|--------|
-| 01 | [Multi-Cipher Encoder/Decoder](cipher-tool/) | ✅ Done |
-| 02 | [Concurrent TCP Port Scanner](port-scanner/) | ✅ Done |
+| 01 | [Multi-Cipher Encoder/Decoder](day01/cipher-tool/) | ✅ Done |
+| 02 | [Concurrent TCP Port Scanner](day02/port-scanner/) | ✅ Done |
 | 03 | TBD | ⬜ |
 | 04 | TBD | ⬜ |
 | 05 | TBD | ⬜ |
