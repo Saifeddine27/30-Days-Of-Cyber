@@ -55,7 +55,6 @@ By Day 30: a real portfolio of tools I built myself.
 - Research first, AI only when stuck
 - Understand what I'm building, not just make it work
 - Commit daily
-- Document what I learned
 
 ---
 
