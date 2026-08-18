@@ -100,3 +100,19 @@ cipher-tool/
 ├── vigenere.py       # Vigenère cipher encrypt/decrypt functions (NumPy Matrix)
 ├── hex_algo.py       # Hex encode/decode functions
 └── README.md         # This file
+```
+
+---
+
+## What I Learned
+
+- ASCII values and character manipulation with `ord()` / `chr()`.
+- Mathematical modulo operations for circular data structures (alphabet wrapping).
+- Advanced binary representation and bitwise manipulation (`<<`, `>>`, `|`, `&`).
+- How Base64 padding and 24-bit chunking actually work under the hood.
+- Using `NumPy` to generate and parse multi-dimensional arrays (`np.where()`) for cryptography.
+- Structuring a Python project with multiple modules and a unified CLI entry point.
+
+---
+
+**#30DaysOfCyber**
