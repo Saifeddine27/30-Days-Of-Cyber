@@ -55,13 +55,7 @@ Initially, writing separate functions for every DNS record type resulted in mass
 A common issue with DNS scanners is terminal spam: if a user types a non-existent domain, the script throws 6 consecutive `NXDOMAIN` errors. 
 To fix this, I engineered a `check_domain_exists` function. It attempts to resolve the `SOA` (Start of Authority) record first. If it fails, the script safely aborts the entire scan, providing a single, clean error message.
 
-### 3. Record-Specific Parsing & Decoding
-DNS records don't all return simple strings:
-*   **TXT Records:** Stored as raw byte-strings that can easily break terminal formatting. The tool safely merges and decodes them into clean UTF-8 strings.
-*   **MX Records:** The tool automatically extracts and formats both the server exchange and its priority (preference), vital for understanding mail routing.
-*   **CNAME & NS Records:** Extracted using the specific `target` attributes from the `dnspython` library objects.
-
-### 4. Reverse DNS Translation (PTR)
+### 3. Reverse DNS Translation (PTR)
 You cannot directly query an IP address in the DNS system. For the Reverse Lookup feature, the tool mathematically reverses the IP octets and appends the `.in-addr.arpa.` suffix before querying the `PTR` (Pointer) records to find the hidden hostname behind an IP.
 
 ## Project Structure
@@ -79,7 +73,6 @@ dns-recon-tool/
 *   **DNS Fundamentals:** Deep dive into how A, AAAA, MX, NS, TXT, CNAME, and PTR records orchestrate the internet.
 *   **Software Architecture:** Decoupling the User Interface (`main.py`) from the Business Logic (`dns_lookup.py`) and strictly applying the DRY principle.
 *   **Exception Handling:** Managing granular network errors in Python (`NXDOMAIN`, `NoAnswer`, `Timeout`) to keep the application stable.
-*   **Reconnaissance Methodology:** Learning how TXT records expose a company's internal tech stack (Microsoft 365, Docusign, Apple Pay, etc.) and email security policies.
 
 ***
 *#30DaysOfCyber*
