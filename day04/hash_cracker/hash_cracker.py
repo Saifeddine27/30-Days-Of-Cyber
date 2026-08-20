@@ -114,7 +114,7 @@ def dict_multiprocessing_cracker(hash_target: str, hash_type: str, dict_path: st
     for i in range(num_cores):
         list_start = i * list_size
         list_end = list_start + list_size if i < num_cores - 1 else len(words)
-        lists.append(words[list_start:list_end]) # Correction de la virgule en deux-points
+        lists.append(words[list_start:list_end]) 
         
     ind_found = Value("i", 0)
     manager = Manager()
