@@ -20,7 +20,7 @@ By Day 30: a real portfolio of tools I built myself.
 | 02 | [Concurrent TCP Port Scanner](day02/port-scanner/) | ✅ Done |
 | 03 | [DNS Reconnaissance Tool](day03/dns_lookup/) | ✅ Done |
 | 04 | [Hash Cracker Tool](day04/hash_cracker/) | ✅ Done |
-| 05 | TBD | ⬜ |
+| 05 | [Metadata Scrubber Tool](day05/metadata_scrubber/) | ✅ Done |
 | 06 | TBD | ⬜ |
 | 07 | TBD | ⬜ |
 | 08 | TBD | ⬜ |
