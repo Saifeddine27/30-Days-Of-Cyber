@@ -21,7 +21,7 @@ By Day 30: a real portfolio of tools I built myself.
 | 03 | [DNS Reconnaissance Tool](day03/dns_lookup/) | ✅ Done |
 | 04 | [Hash Cracker Tool](day04/hash_cracker/) | ✅ Done |
 | 05 | [Metadata Scrubber Tool](day05/metadata_scrubber/) | ✅ Done |
-| 06 | TBD | ⬜ |
+| 06 | [Network Traffic Analyser Tool](day06/network_traffic_analyser/) | ✅ Done |
 | 07 | TBD | ⬜ |
 | 08 | TBD | ⬜ |
 | 09 | TBD | ⬜ |
