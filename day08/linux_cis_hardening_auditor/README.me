@@ -1,0 +1,66 @@
+# Day 08 — Linux CIS Hardening Auditor
+
+**30 Days. 30 Challenges.**
+
+Welcome to Day 08 of the **30 Days of Cyber** challenge! Today marks the beginning of the "Blue Team" focused week. This project shifts gears to system defense, specifically Linux system hardening based on industry-standard CIS (Center for Internet Security) Benchmarks.
+
+The goal: Build a Bash script that audits a Linux system, identifies misconfigurations, scores the system's security posture, and provides the exact commands needed to fix vulnerabilities.
+
+## What I Built
+
+A standalone **Linux CIS Hardening Auditor** written entirely in Bash. 
+
+This tool automatically scans the host system against a curated list of CIS Level 1 and Level 2 security controls. The current engine checks firewall configurations (UFW), authentication rules (SSH root login), and critical file permissions (`/etc/shadow`). 
+
+###Execution Requirement: Sudo is Mandatory
+Because auditing critical system configurations (like reading `/etc/shadow` or checking SSH daemon settings) requires elevated privileges, **you must run this script using `sudo`** for accurate results. If run as a standard user, the script will gracefully catch permission errors and mark the checks as failed.
+
+    sudo ./cis_auditor.sh
+
+## Scaling the Tool (Adding More Benchmarks)
+
+This script is built with a modular `run_check` function, meaning it acts as a foundational engine. The current checks are just a small fraction of the CIS standards. 
+
+There are over a hundred additional benchmarks covering Initial Setup, Network Configuration, Logging, and Maintenance that can be verified. You can easily expand this tool by finding the exact configuration requirements on the official CIS website and adding them as new `run_check` blocks:
+**[CIS Debian/Ubuntu Benchmarks](https://www.cisecurity.org/benchmark/debian_linux)**
+
+## How It Works
+
+### The Core Engine
+The script uses a standardized Bash function that takes 5 arguments: the CIS ID, the check name, the command to execute, the expected output, and the remediation steps. 
+
+### Output Example
+
+    Démarrage de l'audit système CIS...
+    =========================================
+    [*] Checking CIS 3.5.1: Ensure Uncomplicated Firewall (UFW) is active...
+        [-] Status: VULNERABLE (Fail)
+        [!] Found: 'Status: inactive'
+        [>] Remedy: Run 'sudo apt install ufw' and 'sudo ufw enable'
+    
+    [*] Checking CIS 5.2.8: Ensure SSH root login is disabled...
+        [+] Status: SECURE (Pass)
+    
+    [*] Checking CIS 6.1.3: Ensure permissions on /etc/shadow are configured...
+        [+] Status: SECURE (Pass)
+    
+    =========================================
+                 AUDIT REPORT                
+    =========================================
+      Total Checks : 3
+      Passed       : 2
+      Failed       : 1
+      Security Score: 66%
+    =========================================
+    
+    [!] ACTION REQUIRED: You have 1 vulnerable configurations.
+        Please review the 'Remedy' steps above to harden your system.
+
+## What I Learned
+
+* **Bash Scripting:** Manipulating variables, executing dynamic commands with `eval`, capturing outputs via command substitution, and routing `stderr` to `/dev/null`.
+* **CIS Benchmarks:** Understanding the strict requirements of industry security standards and the difference between a functional system and a *secure* system.
+* **System Hardening:** Learning how to practically secure a Linux environment, including setting up `sshd_config` correctly and enforcing strict file permissions.
+
+***
+*#30DaysOfCyber*
