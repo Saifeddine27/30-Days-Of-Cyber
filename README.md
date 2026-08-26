@@ -22,8 +22,8 @@ By Day 30: a real portfolio of tools I built myself.
 | 04 | [Hash Cracker Tool](day04/hash_cracker/) | ✅ Done |
 | 05 | [Metadata Scrubber Tool](day05/metadata_scrubber/) | ✅ Done |
 | 06 | [Network Traffic Analyser Tool](day06/network_traffic_analyser/) | ✅ Done |
-| 07 | TBD | ⬜ |
-| 08 | TBD | ⬜ |
+| 07 | [Review](day07/) | ✅ Done |
+| 08 | [Linux Cis Hardening Auditor](day08/linux_cis_hardening_auditor/) | ✅ Done |
 | 09 | TBD | ⬜ |
 | 10 | TBD | ⬜ |
 | 11 | TBD | ⬜ |
