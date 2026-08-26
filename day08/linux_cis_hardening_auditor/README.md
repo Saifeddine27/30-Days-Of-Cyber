@@ -12,7 +12,7 @@ A standalone **Linux CIS Hardening Auditor** written entirely in Bash.
 
 This tool automatically scans the host system against a curated list of CIS Level 1 and Level 2 security controls. The current engine checks firewall configurations (UFW), authentication rules (SSH root login), and critical file permissions (`/etc/shadow`). 
 
-###Execution Requirement: Sudo is Mandatory
+### Execution Requirement: Sudo is Mandatory
 Because auditing critical system configurations (like reading `/etc/shadow` or checking SSH daemon settings) requires elevated privileges, **you must run this script using `sudo`** for accurate results. If run as a standard user, the script will gracefully catch permission errors and mark the checks as failed.
 
     sudo ./cis_auditor.sh
