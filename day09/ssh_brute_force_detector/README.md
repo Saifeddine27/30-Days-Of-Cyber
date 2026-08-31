@@ -5,30 +5,6 @@
 This is Day 09 of the **30 Days of Cyber** community challenge — 30 days, 30 hands-on cybersecurity projects, built from scratch. Each day connects to the ones before it, starting from the basics and climbing toward real offensive/defensive scenarios.
 
 The goal: research, learn, understand, and build. No copy-pasting tutorials — just real problem-solving.
-## Project Structure
-
-ssh-bf-detector/
-├── main.py                 # Main monitoring, detection, and blocking logic
-├── whitelist.txt           # User-defined list of protected IPs (MUST BE CONFIGURED)
-├── bookmark.txt            # Auto-generated state tracking memory file
-├── ssh_bf_detector.log     # Persistent audit trail of security events
-└── README.md               # This file
-
----
-
-## What I Learned
-
-- Reading files in real-time without memory exhaustion (`seek()`, `tell()`, `readline()`).
-- Handling system edge cases like Linux log rotation.
-- Managing system-level firewalls (`iptables`) programmatically via Python `subprocess`.
-- Time-series tracking using dictionaries and list comprehensions.
-- Applying the **"Early Exit" (Fail Fast)** software pattern for performance optimization (Whitelisting).
-- Using Python `sets` for `O(1)` instant lookups.
-- Creating professional audit trails using Python's `logging` module.
-
----
-
-**#30DaysOfCyber**
 
 ---
 
@@ -79,7 +55,7 @@ Once an attack is confirmed, the tool communicates directly with the Linux kerne
 - **Auto-Unban:** While waiting for new log lines, the script iterates through a dictionary of blocked IPs. If the current time minus the ban time is greater than 86,400 seconds (24 hours), it executes `iptables -D` to remove the rule and give the IP a second chance.
 
 ### 4. Professional Logging (Audit Trail)
-Security tools must leave a paper trail. Instead of relying on `print()` statements that disappear when the terminal closes, this tool uses Python's `logging` module to maintain a persistent `ssh_bf_detector.log` file, recording every ban, unban, and error with exact timestamps.
+Security tools must leave a paper trail. Instead of relying on `print()` statements that disappear when the terminal closes, this tool uses Python's `logging` module to maintain a persistent `ssh_bf_detector.log` file in the project directory, recording every ban, unban, and error with exact timestamps.
 
 ---
 
@@ -93,15 +69,14 @@ By configuring `/etc/ssh/sshd_config` with `PasswordAuthentication no`, you forc
 
 ## Project Structure
 
+```text
 ssh_brute_force_detector/
 ├── main.py                 # Main monitoring, detection, and blocking logic
 ├── whitelist.txt           # User-defined list of protected IPs (MUST BE CONFIGURED)
 ├── bookmark.txt            # Auto-generated state tracking memory file
 ├── ssh_bf_detector.log     # Persistent audit trail of security events
 └── README.md               # This file
-
----
-
+```
 ## What I Learned
 
 - Reading files in real-time without memory exhaustion (`seek()`, `tell()`, `readline()`).
@@ -115,3 +90,4 @@ ssh_brute_force_detector/
 ---
 
 **#30DaysOfCyber**
+
