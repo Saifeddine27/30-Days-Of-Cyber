@@ -5,6 +5,30 @@
 This is Day 09 of the **30 Days of Cyber** community challenge — 30 days, 30 hands-on cybersecurity projects, built from scratch. Each day connects to the ones before it, starting from the basics and climbing toward real offensive/defensive scenarios.
 
 The goal: research, learn, understand, and build. No copy-pasting tutorials — just real problem-solving.
+## Project Structure
+
+ssh-bf-detector/
+├── main.py                 # Main monitoring, detection, and blocking logic
+├── whitelist.txt           # User-defined list of protected IPs (MUST BE CONFIGURED)
+├── bookmark.txt            # Auto-generated state tracking memory file
+├── ssh_bf_detector.log     # Persistent audit trail of security events
+└── README.md               # This file
+
+---
+
+## What I Learned
+
+- Reading files in real-time without memory exhaustion (`seek()`, `tell()`, `readline()`).
+- Handling system edge cases like Linux log rotation.
+- Managing system-level firewalls (`iptables`) programmatically via Python `subprocess`.
+- Time-series tracking using dictionaries and list comprehensions.
+- Applying the **"Early Exit" (Fail Fast)** software pattern for performance optimization (Whitelisting).
+- Using Python `sets` for `O(1)` instant lookups.
+- Creating professional audit trails using Python's `logging` module.
+
+---
+
+**#30DaysOfCyber**
 
 ---
 
