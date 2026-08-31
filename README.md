@@ -24,7 +24,7 @@ By Day 30: a real portfolio of tools I built myself.
 | 06 | [Network Traffic Analyser Tool](day06/network_traffic_analyser/) | ✅ Done |
 | 07 | [Review](day07/) | ✅ Done |
 | 08 | [Linux Cis Hardening Auditor](day08/linux_cis_hardening_auditor/) | ✅ Done |
-| 09 | TBD | ⬜ |
+| 09 | [SSH Brute Force Detector](day09/ssh_brute_force_detector/) | ✅ Done |
 | 10 | TBD | ⬜ |
 | 11 | TBD | ⬜ |
 | 12 | TBD | ⬜ |
