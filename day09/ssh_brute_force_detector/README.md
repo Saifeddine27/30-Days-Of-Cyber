@@ -55,7 +55,7 @@ Once an attack is confirmed, the tool communicates directly with the Linux kerne
 - **Auto-Unban:** While waiting for new log lines, the script iterates through a dictionary of blocked IPs. If the current time minus the ban time is greater than 86,400 seconds (24 hours), it executes `iptables -D` to remove the rule and give the IP a second chance.
 
 ### 4. Professional Logging (Audit Trail)
-Security tools must leave a paper trail. Instead of relying on `print()` statements that disappear when the terminal closes, this tool uses Python's `logging` module to maintain a persistent `/var/log/ssh_detector.log` file, recording every ban, unban, and error with exact timestamps.
+Security tools must leave a paper trail. Instead of relying on `print()` statements that disappear when the terminal closes, this tool uses Python's `logging` module to maintain a persistent `ssh_bf_detector.log` file, recording every ban, unban, and error with exact timestamps.
 
 ---
 
@@ -73,7 +73,7 @@ cipher-tool/
 ├── main.py              # Main monitoring, detection, and blocking logic
 ├── whitelist.txt        # User-defined list of protected IPs (MUST BE CONFIGURED)
 ├── bookmark.txt         # Auto-generated state tracking memory file
-├── ssh_detector.log     # Persistent audit trail of security events
+├── ssh_bf_detector.log  # Persistent audit trail of security events
 └── README.md            # This file
 
 ---
