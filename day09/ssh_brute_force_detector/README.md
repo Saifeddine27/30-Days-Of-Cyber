@@ -70,11 +70,11 @@ By configuring `/etc/ssh/sshd_config` with `PasswordAuthentication no`, you forc
 ## Project Structure
 
 ssh_brute_force_detector/
-├── main.py              # Main monitoring, detection, and blocking logic
-├── whitelist.txt        # User-defined list of protected IPs (MUST BE CONFIGURED)
-├── bookmark.txt         # Auto-generated state tracking memory file
-├── ssh_bf_detector.log    # Persistent audit trail of security events
-└── README.md            # This file
+├── main.py                 # Main monitoring, detection, and blocking logic
+├── whitelist.txt           # User-defined list of protected IPs (MUST BE CONFIGURED)
+├── bookmark.txt            # Auto-generated state tracking memory file
+├── ssh_bf_detector.log     # Persistent audit trail of security events
+└── README.md               # This file
 
 ---
 
